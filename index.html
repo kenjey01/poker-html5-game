@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html manifest="global.manifest">
+<head>
+<meta charset="utf-8">
+<title>Memory Training</title>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function start(difficulty){
+	 window.location.href = difficulty+".html";
+}
+function init(){
+	//var process = 0;
+	applicationCache.addEventListener("progress", function() {
+		var element = document.getElementById("index_progress");
+		element.innerHTML =  parseInt(element.innerHTML) + 7;
+		var bar_width = element.style.width ;
+		//alert(element.style.width);
+		bar_width = parseInt(bar_width) + 29;
+		bar_width = bar_width + "px";
+		//alert(bar_width);
+		element.style.width = bar_width;
+    }, true);
+	 applicationCache.addEventListener("cached", function() {
+        document.getElementById("index_progress").style.display = "none";
+        document.getElementById("index_button").style.display = "block";
+    }, true);
+	 applicationCache.addEventListener("noupdate", function() {
+        document.getElementById("index_progress").style.display = "none";
+        document.getElementById("index_button").style.display = "block";
+    }, true);
+	applicationCache.addEventListener("error", function() {
+		document.getElementById("index_progress").style.display = "none";
+        document.getElementById("index_button").style.display = "block";
+    }, true);
+}
+</script>
+</head>
+
+<body onload="init()">
+<section id="main">
+<section id="index_logo">(扑克)记忆力训练</section>
+<section id="index_readme">
+	玩法：按从小到大的顺序，分别配对相同点数的扑克牌。<br>
+	(仅限WebKit内核浏览器：Chrome、Safari等)
+	<!--难度：简单（4对）&nbsp;&nbsp;中等（8对）&nbsp;&nbsp;困难（12对）-->
+</section>
+<section id="index_progress" style="width:1px;">0</section>
+<section id="index_button">
+	<div onclick="start('easy')">容易</div>
+	<div onclick="start('normal')">中等</div>
+	<div onclick="start('hard')">困难</div>
+</section>
+<footer style="color:white;right:10px;bottom:10px;position: absolute;">by KeN</footer>
+</section>
+</body>
+</html>

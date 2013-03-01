@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Memory Training</title>
+<script src="js/game.js" type="text/javascript"></script>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init('normal')">
+<section id="main">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="table_poker" style="margin-top: 70px;">
+  <tr>
+    <td><div id="poker_15"></div></td>
+    <td><div id="poker_11"></div></td>
+    <td><div id="poker_7"></div></td>
+    <td><div id="poker_3"></div></td>
+    <td><div id="poker_24" style="position: relative;"><canvas id="clock" width="114px" height="114px"></canvas><div id="sidemenu"><div id="side_left" onclick="sideMenu()"></div><div id="side_refresh" onclick="restart()"></div><div id="side_exit"  onclick="exit()"></div><div id="side_music" onclick="musicSwitch()" ></div><div id="side_right" onclick="hideMenu()"></div></div></div></td>
+  </tr>
+  <tr>
+    <td><div id="poker_14"></div></td>
+    <td><div id="poker_10"></div></td>
+    <td><div id="poker_6"></div></td>
+    <td><div id="poker_2"></div></td>
+    <td><div id="poker_99"></div></td>
+  </tr>
+  <tr>
+    <td><div id="poker_13"></div></td>
+    <td><div id="poker_9"></div></td>
+    <td><div id="poker_5"></div></td>
+    <td><div id="poker_1"></div></td>
+    <td><div id="poker_99"></div></td>
+  </tr>
+  <tr>
+    <td><div id="poker_12"></div></td>
+    <td><div id="poker_8"></div></td>
+    <td><div id="poker_4"></div></td>
+    <td><div id="poker_0"></div></td>
+    <td><div id="poker_99"></div></td>
+  </tr>
+</table>
+<section id="middle">
+<div id="readyDIV">
+	<div id="ready_4"></div>
+	<div id="ready_3"></div>
+	<div id="ready_2"></div>
+	<div id="ready_1"></div>
+</div>
+<div id="gameover">
+		<div id="over_title">游戏结束</div>
+		<div id="over_diff"></div>
+		<div id="over_time"></div>
+		<div id="over_button">
+			<section id="side_refresh" onclick="restart()"></section><section id="side_exit"  onclick="exit()"></section>
+			<!--<div id="over_again"></div><div id="over_menu"></div>-->
+		</div>
+	</div>
+</section>
+<audio id="sound1" src="./images/poker.mp3" preload="auto"></audio>
+
+  
+</section>
+</body>
+</html>
